@@ -6,26 +6,7 @@ import math
 
 RTOL = 1e-3
 
-def test_add():
-    x = Value(4.343)
-    y = Value(1.098)
 
-    z = x + y
-    z.backward()
-
-    assert x.grad == 1
-    assert y.grad == 1
-
-
-ops = ['__add__',
-      '__mul__',
-      '__pow__',
-      '__radd__',
-      '__sub__',
-      '__rsub__',
-      '__rmul__',
-      '__truediv__',
-      '__rtruediv__']
 
 def make_test_binop(opname):
     for i in range(100):
@@ -33,12 +14,22 @@ def make_test_binop(opname):
         other = random.random() * 10 - 5
         
         dt = 1e-6
+
         v = Value(value)
-        r = getattr(v, opname)(other)
+        o = Value(other)
+        r = getattr(v, opname)(o)
         r.backward()
         g_auto = v.grad
         r = getattr(value, opname)(other)
         r_ = getattr(value + dt, opname)(other)
+        g_emp = (r_ - r) / dt
+
+        rtol = abs((g_emp - g_auto) / g_emp)
+        assert rtol < RTOL
+
+        g_auto = o.grad
+        r = getattr(value, opname)(other)
+        r_ = getattr(value, opname)(other + dt)
         g_emp = (r_ - r) / dt
 
         rtol = abs((g_emp - g_auto) / g_emp)
@@ -50,8 +41,31 @@ def test_add():
 def test_mul():
      return make_test_binop('__mul__')
 
+
+
 def test_pow():
-     return make_test_binop('__pow__')
+    """
+    Pow doesn't support gradients wrt the exponent, so we need to special case it
+    """
+    for i in range(100):
+        value = random.random() * 10 - 5
+        other = random.random() * 10 - 5
+        
+        dt = 1e-6
+
+        v = Value(value)
+
+        r = getattr(v, '__pow__')(other)
+        r.backward()
+        g_auto = v.grad
+        r = getattr(value, '__pow__')(other)
+        r_ = getattr(value + dt, '__pow__')(other)
+        g_emp = (r_ - r) / dt
+
+        rtol = abs((g_emp - g_auto) / g_emp)
+        assert rtol < RTOL
+
+
 
 def test_radd():
      return make_test_binop('__radd__')
@@ -125,7 +139,7 @@ def test_sin():
 def test_neg():
     return make_test_unary('__neg__')
 
-def test_relu():
+def test_sigmoid():
     for value in [random.random(), -random.random()]:
         
         dt = 1e-6
@@ -141,7 +155,7 @@ def test_relu():
         assert rtol < RTOL
 
 
-def test_sigmoid():
+def test_relu():
     for value in [random.random(), -random.random()]:
         
         dt = 1e-6
