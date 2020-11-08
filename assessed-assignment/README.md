@@ -19,6 +19,10 @@ If you are interested in a more challenging case, and in gaining a deeper unders
 - Manually-implemented derivative code in terms of a minimal autodiff approach such as https://github.com/karpathy/micrograd or https://github.com/mattjj/autodidact and then using the differentiable type (scalar for micrograd and differentiable Numpy array for autodidact) as a basis for your NN code and gradients.
 - A more complicated architecture such as a recurrent neural network (RNN) (e.g., LSTM, GRU), or a convolutional neural network (CNN) (e.g., 2d convolutions, pooling). For example an LSTM can be implemented as a collection of fully-connected layers and nonlinearities or convolutional NN layers can be implemented in terms of matrix multiplication operations.
 
+### Choice of programming language
+
+Python is the preferred programming language for this assignment, but you can use other languages as well.
+
 ### Submission
 Students must submit code and an informal two-page report (including plots) describing their results to gunes@robots.ox.ac.uk. Please use the email subject "[ML AIMS MT2020]".
 
