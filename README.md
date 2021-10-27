@@ -1,9 +1,9 @@
 # Machine Learning
-**AIMS CDT - Michaelmas Term 2020, Week 4**
+**AIMS CDT - Michaelmas Term 2021, Week 4**
 
 This repository contains material related to the practical sessions and assessment of the Machine Learning module within the [Autonomous Intelligent Machines and Systems (AIMS)](https://aims.robots.ox.ac.uk/) CDT taught course at the University of Oxford.
 
-For more information please visit the [course web page](http://www.robots.ox.ac.uk/~gunes/teaching/ml-aims-mt2020.html).
+For more information please visit the [course web page](http://www.robots.ox.ac.uk/~gunes/teaching/ml-aims-mt2021.html).
 
 ## Practical sessions
 
@@ -24,8 +24,8 @@ In order to follow the practicals you need to have the following installed.
 Alternatively you can use a [Google Colab](https://colab.research.google.com/) notebook, within which PyTorch and the other dependencies are available by default and you can install Pyro by running `!pip install pyro-ppl` in a regular code cell. Colab notebooks run the code in the cloud and do not require any installation in your local machine.
 
 #### Demonstrators
-The demonstrators for the practicals are [Benjamin Moseley](https://github.com/benmoseley) and [Lewis Smith](http://www.robots.ox.ac.uk/~lsgs/).
+The demonstrators for the practicals are [Benjamin Moseley](https://benmoseley.blog/) and [A. Tuan Nguyen](https://atuannguyen.com/).
 
 ## Assessed assignment
 
-The course is assessed by a take-home assignment that needs to be submitted. See the assessed assignment directory for the instructions. **Deadline: 9 November 2020**
+The course is assessed by a take-home assignment that needs to be submitted. See the assessed assignment directory for the instructions. **Deadline: 8 November 2021**
