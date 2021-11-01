@@ -32,4 +32,4 @@ Students must submit code and an informal two-page report (including plots) desc
 Assessment will be on a ternary NS (Non-satisfactory) / S (Satisfactory) / S* (Outstanding) scale.
 
 ### Deadline
-The AIMS CDT program suggests that assignments can be given on Thursday (the last day of a module) and be due by the following Monday. Based on this the deadline for the assignment is 9 November 2020.
+The AIMS CDT program suggests that assignments can be given on Thursday (the last day of a module) and be due by the following Monday. Based on this the deadline for the assignment is 8 November 2021.
