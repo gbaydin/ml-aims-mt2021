@@ -1,5 +1,7 @@
 ## Practical L3-L4
 
+Practical designed by [Lewis Smith](https://www.robots.ox.ac.uk/~lsgs/).
+
 This practical is going to review the implementation of the minimal automatic differentiation (differentiable programming) system.
 It's based on one written by Andrej Karpathy, called [micrograd](
 https://github.com/karpathy/micrograd) - but please don't look at it unless you are really stuck!
